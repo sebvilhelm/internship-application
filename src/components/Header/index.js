@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import Link from 'gatsby-link';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import theme from '../../theme';
-import {HomeIcon} from '../Icons'
+import Icon from '../../components/Icon';
 
 const HeaderContainer = styled.header`
   position: relative;
@@ -27,11 +27,16 @@ const Nav = styled.nav`
   display: flex;
 `;
 
+const StyledIcon = styled(Icon)`
+  margin-right: 0.5rem;
+`;
+
 const linkCss = css`
   position: relative;
   display: flex;
   align-items: center;
   padding: 1rem 1rem;
+  padding-left: 0.5rem;
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -64,7 +69,7 @@ const StyledLink = styled(OutboundLink)`
   ${linkCss};
 `;
 
-const navLinks = [{ title: 'Home', link: '/' }, { title: 'Previous Work', link: '/previous-work' }];
+const navLinks = [{ title: 'Home', link: '/', iconType: 'home' }, { title: 'Previous Work', link: '/previous-work' }];
 
 const socialLinks = [
   { title: 'LinkedIn', link: 'https://www.linkedin.com/in/svnielsen/' },
@@ -76,9 +81,9 @@ const Header = () => (
   <HeaderContainer>
     <FlexHeader>
       <Nav>
-        {navLinks.map(({ link, title }) => (
+        {navLinks.map(({ link, title, iconType }) => (
           <StyledNavLink key={title} exact activeClassName="active" to={link}>
-            <HomeIcon size={24} fill="white" />
+            <StyledIcon type={iconType} fill={theme.primary} />
             {title}
           </StyledNavLink>
         ))}
