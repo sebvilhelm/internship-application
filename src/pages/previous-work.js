@@ -44,6 +44,10 @@ const CardTitleWrapper = styled.div`
   line-height: 1.2;
 `;
 
+const TagList = styled.ul`
+  display: flex;
+`;
+
 class PreviousWork extends React.Component {
   state = {
     filter: null,
