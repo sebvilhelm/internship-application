@@ -32,6 +32,14 @@ const portfolio = [
     linkText: 'See the code on github',
   },
   {
+    title: 'Internship Application',
+    type: 'react',
+    text:
+      "Yes. This very site. It's quickly put together, which is why I chose to user Gatsby for it. Check out the (probably messy) source code!",
+    link: 'https://github.com/VilhelmNielsen/internship-application',
+    linkText: 'See the code on github',
+  },
+  {
     title: 'Nordea Markets',
     type: 'wordpress',
     text:

@@ -60,6 +60,7 @@ class PreviousWork extends React.Component {
       { filter: 'wordpress', name: 'Wordpress' },
       { filter: 'javascript', name: 'JavaScript' },
       { filter: 'nodejs', name: 'Node.js' },
+      { filter: 'react', name: 'React' },
     ];
     return (
       <section>
