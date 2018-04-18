@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import Link from 'gatsby-link';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import theme from '../../theme';
+import {HomeIcon} from '../Icons'
 
 const HeaderContainer = styled.header`
   position: relative;
@@ -77,6 +78,7 @@ const Header = () => (
       <Nav>
         {navLinks.map(({ link, title }) => (
           <StyledNavLink key={title} exact activeClassName="active" to={link}>
+            <HomeIcon size={24} fill="white" />
             {title}
           </StyledNavLink>
         ))}

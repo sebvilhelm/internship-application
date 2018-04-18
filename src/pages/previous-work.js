@@ -11,7 +11,7 @@ const GridContainer = styled.ul`
   display: grid;
   grid-gap: 1px;
   padding: 0 1rem;
-  max-width: 60rem;
+  max-width: ${theme.maxScreenWidth};
   margin: 0 auto;
 `;
 
