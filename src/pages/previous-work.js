@@ -46,6 +46,7 @@ const CardTitleWrapper = styled.div`
 
 const TagList = styled.ul`
   display: flex;
+  list-style: none;
 `;
 
 class PreviousWork extends React.Component {
@@ -88,14 +89,15 @@ class PreviousWork extends React.Component {
               React work, so let's talk, so I can showcase that I actually know that stuff too{' '}
               <Psst>(This site is built on React and GatsbyJS, you know)</Psst>
             </TextIntro>
-            <div>
-              <H3 style={{ marginBottom: 0 }}>Filters:</H3>
+
+            <H3 style={{ marginBottom: 0 }}>Filters:</H3>
+            <TagList>
               {types.map(type => (
-                <button key={type.filter} onClick={() => this.filterList(type.filter)}>
-                  {type.name}
-                </button>
+                <li key={type.filter}>
+                  <button onClick={() => this.filterList(type.filter)}>{type.name}</button>
+                </li>
               ))}
-            </div>
+            </TagList>
           </Card>
           {items.map(card => (
             <Card key={card.title}>
