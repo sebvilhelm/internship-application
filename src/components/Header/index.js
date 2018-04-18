@@ -71,7 +71,7 @@ const StyledLink = styled(OutboundLink)`
 
 const navLinks = [
   { title: 'Home', link: '/', iconType: 'home' },
-  { title: 'Previous Work', link: '/previous-work', iconType: 'Rocket' },
+  { title: 'Previous Work', link: '/previous-work', iconType: 'rocket' },
 ];
 
 const socialLinks = [
