@@ -60,7 +60,7 @@ const tech = [
   },
 ];
 
-const otherTech = ['Redux', 'Node.js', 'Express.js', 'Apollo GraphQL'];
+const otherTech = ['Redux', 'Node.js', 'Express.js', 'Apollo GraphQL', 'Angular5'];
 
 const List = styled.ul`
   margin: 1rem 0;
@@ -90,7 +90,9 @@ const Technologies = () => (
     <List>
       {otherTech.map(item => (
         <ListItem key={item}>
-          <H4 color={theme.black}>{item}</H4>
+          <H4 small color={theme.black}>
+            {item}
+          </H4>
         </ListItem>
       ))}
     </List>

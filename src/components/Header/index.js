@@ -69,7 +69,10 @@ const StyledLink = styled(OutboundLink)`
   ${linkCss};
 `;
 
-const navLinks = [{ title: 'Home', link: '/', iconType: 'home' }, { title: 'Previous Work', link: '/previous-work' }];
+const navLinks = [
+  { title: 'Home', link: '/', iconType: 'home' },
+  { title: 'Previous Work', link: '/previous-work', iconType: 'Rocket' },
+];
 
 const socialLinks = [
   { title: 'LinkedIn', link: 'https://www.linkedin.com/in/svnielsen/' },

@@ -54,7 +54,7 @@ export const H3 = styled.h3`
 export const H4 = styled.h4`
   color: ${props => (props.color ? props.color : theme.darkGrey)};
   font-weight: 400;
-  font-size: 1.3rem;
+  font-size: ${props => (props.small ? '1rem' : '1.3rem')};
   margin: 0.3rem 0 1rem;
   li > & {
     margin: 0;
