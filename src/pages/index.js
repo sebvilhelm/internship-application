@@ -32,11 +32,6 @@ const TitleContainer = styled.div`
   z-index: 1;
 `;
 
-const GridContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-`;
-
 const IndexPage = ({ data }) => (
   <section>
     <PortraitWrapper>
@@ -82,9 +77,9 @@ const IndexPage = ({ data }) => (
     </TextContainer>
   </section>
 );
-// eslint-disable-next-line no-undef
+// eslint-disable-next-line
 export const query = graphql`
-  query GatsbyImageSampleQuery {
+  query HeaderImageQuery {
     file(relativePath: { eq: "portrait_me.jpg" }) {
       childImageSharp {
         sizes(maxWidth: 1220, maxHeight: 600) {

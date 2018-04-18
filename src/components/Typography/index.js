@@ -115,5 +115,7 @@ export const UpperTitleDescription = styled.span`
   letter-spacing: 0.3em;
   font-weight: 800;
   color: ${props =>
-    props.type === 'wordpress' ? theme.secondary : props.type === 'javascript' ? theme.tertiary : theme.primary};
+    props.type === 'wordpress'
+      ? theme.secondary
+      : props.type === 'javascript' ? theme.tertiary : props.type === 'nodejs' ? theme.green : theme.primary};
 `;

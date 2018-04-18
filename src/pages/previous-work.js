@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import Helmet from 'react-helmet';
 import { Title, UpperTitleDescription, H2, H3, Text, TextIntro, Psst } from '../components/Typography';
+import Button from '../components/Button';
 import theme from '../theme';
 import portfolio from '../data/portfolio';
 
 const GridContainer = styled.ul`
   display: grid;
-  /* grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); */
   grid-gap: 1px;
   padding: 0 1rem;
   max-width: 60rem;
@@ -20,24 +20,11 @@ const Card = styled.li`
   background: white;
   padding: 1rem 2rem 2rem;
   list-style: none;
-`;
-
-const Card2 = styled.li`
-  list-style: none;
-  position: relative;
-  background: white;
-  padding: 1rem 2rem 2rem;
-  border-radius: 0.4rem 0.4rem 0 0;
-  overflow: hidden;
-  box-shadow: 0 2px 5px hsla(13, 15%, 85%, 0.1), 0 10px 10px 5px hsla(13, 2%, 65%, 0.05);
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    width: 100%;
-    left: 0;
-    border-top: 0.4rem solid rgb(35, 146, 167);
-  }
+  ${props => props.showBorder && `border-left: 3px solid transparent`};
+  border-color: ${props =>
+    props.type === 'wordpress'
+      ? theme.secondary
+      : props.type === 'javascript' ? theme.tertiary : props.type === 'nodejs' ? theme.green : theme.primary};
 `;
 
 const CardTitleWrapper = styled.div`
@@ -47,6 +34,11 @@ const CardTitleWrapper = styled.div`
 const TagList = styled.ul`
   display: flex;
   list-style: none;
+`;
+
+const TagItem = styled.li`
+  ${props => props.active && `border-bottom: 2px solid ${theme.primary}`};
+  margin: 0.5rem 1rem 0.5rem 0;
 `;
 
 class PreviousWork extends React.Component {
@@ -76,7 +68,6 @@ class PreviousWork extends React.Component {
           ]}
         />
         <Title style={{ color: theme.primary, textAlign: 'center' }}>Stuff I've worked on</Title>
-
         <GridContainer>
           <Card>
             <CardTitleWrapper>
@@ -93,14 +84,16 @@ class PreviousWork extends React.Component {
             <H3 style={{ marginBottom: 0 }}>Filters:</H3>
             <TagList>
               {types.map(type => (
-                <li key={type.filter}>
-                  <button onClick={() => this.filterList(type.filter)}>{type.name}</button>
-                </li>
+                <TagItem active={type.filter === this.state.filter} key={type.filter}>
+                  <Button type="small" onClick={() => this.filterList(type.filter)}>
+                    {type.name}
+                  </Button>
+                </TagItem>
               ))}
             </TagList>
           </Card>
           {items.map(card => (
-            <Card key={card.title}>
+            <Card showBorder="true" type={card.type} key={card.title}>
               <CardTitleWrapper>
                 <UpperTitleDescription type={card.type}>{card.type}</UpperTitleDescription>
                 <H2 style={{ marginTop: 0 }}>{card.title}</H2>

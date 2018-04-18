@@ -5,23 +5,31 @@ import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import theme from '../../theme';
 
 const HeaderContainer = styled.header`
+  position: relative;
   background-color: ${theme.black};
 `;
 
 const FlexHeader = styled.div`
-  max-width: 1200px;
+  max-width: ${theme.maxScreenWidth};
+  height: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 40rem) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
-const NavItem = styled.li`
-  display: inline-block;
-  list-style: none;
+const Nav = styled.nav`
+  display: flex;
 `;
 
 const linkCss = css`
-  display: block;
+  position: relative;
+  display: flex;
+  align-items: center;
   padding: 1rem 1rem;
   text-decoration: none;
   text-transform: uppercase;
@@ -34,6 +42,16 @@ const linkCss = css`
   &:hover,
   &:focus {
     color: ${theme.primary};
+  }
+
+  &.active:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    border-bottom: 3px solid ${theme.primary};
   }
 `;
 
@@ -56,26 +74,20 @@ const socialLinks = [
 const Header = () => (
   <HeaderContainer>
     <FlexHeader>
-      <nav>
-        <ul>
-          {navLinks.map(({ link, title }) => (
-            <NavItem key={title}>
-              <StyledNavLink exact activeStyle={{ borderBottom: `3px solid ${theme.primary}` }} to={link}>
-                {title}
-              </StyledNavLink>
-            </NavItem>
-          ))}
-        </ul>
-      </nav>
-      <ul>
-        {socialLinks.map(({ link, title }) => (
-          <NavItem key={title}>
-            <StyledLink target="_blank" title={title} href={link}>
-              {title}
-            </StyledLink>
-          </NavItem>
+      <Nav>
+        {navLinks.map(({ link, title }) => (
+          <StyledNavLink key={title} exact activeClassName="active" to={link}>
+            {title}
+          </StyledNavLink>
         ))}
-      </ul>
+      </Nav>
+      <Nav>
+        {socialLinks.map(({ link, title }) => (
+          <StyledLink key={title} target="_blank" title={title} href={link}>
+            {title}
+          </StyledLink>
+        ))}
+      </Nav>
     </FlexHeader>
   </HeaderContainer>
 );

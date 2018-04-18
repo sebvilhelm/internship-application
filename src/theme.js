@@ -14,6 +14,7 @@ export default {
   primary: '#2392a7',
   secondary: '#d65e50',
   tertiary: '#af6ec7',
+  green: '#6aa723',
   maxScreenWidth: '1220px',
   bgPattern,
 };
