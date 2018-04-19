@@ -75,9 +75,9 @@ const navLinks = [
 ];
 
 const socialLinks = [
-  { title: 'LinkedIn', link: 'https://www.linkedin.com/in/svnielsen/' },
-  { title: 'Twitter', link: 'https://twitter.com/VilhelmNielsen' },
-  { title: 'Github', link: 'https://github.com/VilhelmNielsen' },
+  { title: 'LinkedIn', link: 'https://www.linkedin.com/in/svnielsen/', iconType: 'linkedin' },
+  { title: 'Twitter', link: 'https://twitter.com/VilhelmNielsen', iconType: 'twitter' },
+  { title: 'Github', link: 'https://github.com/VilhelmNielsen', iconType: 'github' },
 ];
 
 const Header = () => (
@@ -86,15 +86,15 @@ const Header = () => (
       <Nav>
         {navLinks.map(({ link, title, iconType }) => (
           <StyledNavLink key={title} exact activeClassName="active" to={link}>
-            <StyledIcon type={iconType} fill={theme.primary} />
+            <StyledIcon size={20} type={iconType} fill={theme.primary} />
             {title}
           </StyledNavLink>
         ))}
       </Nav>
       <Nav>
-        {socialLinks.map(({ link, title }) => (
-          <StyledLink key={title} target="_blank" title={title} href={link}>
-            {title}
+        {socialLinks.map(({ link, title, iconType }) => (
+          <StyledLink aria-label={title} key={title} target="_blank" title={title} href={link}>
+            <StyledIcon size={20} type={iconType} fill={theme.primary} />
           </StyledLink>
         ))}
       </Nav>

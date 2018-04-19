@@ -1,5 +1,6 @@
 import React from 'react'; // eslint-disable-line import/no-extraneous-dependencies
 import styled from 'styled-components';
+import Link from 'gatsby-link';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import Helmet from 'react-helmet';
 import { Title, UpperTitleDescription, H2, H3, Text, TextIntro, Psst } from '../components/Typography';
@@ -71,7 +72,7 @@ class PreviousWork extends React.Component {
         <GridContainer>
           <Card>
             <CardTitleWrapper>
-              <UpperTitleDescription>HAng on</UpperTitleDescription>
+              <UpperTitleDescription>Hang on</UpperTitleDescription>
               <H2 style={{ marginTop: 0 }}>Real quick...</H2>
             </CardTitleWrapper>
             <TextIntro>
@@ -81,7 +82,7 @@ class PreviousWork extends React.Component {
               <Psst>(This site is built on React and GatsbyJS, you know)</Psst>
             </TextIntro>
 
-            <H3 style={{ marginBottom: 0 }}>Filters:</H3>
+            <H3 style={{ marginBottom: 0 }}>Filter by type:</H3>
             <TagList>
               {types.map(type => (
                 <TagItem active={type.filter === this.state.filter} key={type.filter}>
@@ -92,20 +93,26 @@ class PreviousWork extends React.Component {
               ))}
             </TagList>
           </Card>
-          {items.map(card => (
-            <Card showBorder="true" type={card.type} key={card.title}>
-              <CardTitleWrapper>
-                <UpperTitleDescription type={card.type}>{card.type}</UpperTitleDescription>
-                <H2 style={{ marginTop: 0 }}>{card.title}</H2>
-              </CardTitleWrapper>
-              <Text>{card.text}</Text>
-              <Text>
-                <OutboundLink href={card.link} target="_blank">
-                  {card.linkText} →
+          {items.map(({ type, link, text, title, linkText, linkType }) => {
+            const LinkComponent =
+              linkType === 'internal' ? (
+                <Link to={link}>{linkText} →</Link>
+              ) : (
+                <OutboundLink href={link} target="_blank">
+                  {linkText} →
                 </OutboundLink>
-              </Text>
-            </Card>
-          ))}
+              );
+            return (
+              <Card showBorder="true" type={type} key={title}>
+                <CardTitleWrapper>
+                  <UpperTitleDescription type={type}>{type}</UpperTitleDescription>
+                  <H2 style={{ marginTop: 0 }}>{title}</H2>
+                </CardTitleWrapper>
+                <Text>{text}</Text>
+                <Text>{LinkComponent}</Text>
+              </Card>
+            );
+          })}
         </GridContainer>
       </section>
     );
