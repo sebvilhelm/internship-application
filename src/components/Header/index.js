@@ -103,7 +103,7 @@ const socialLinks = [
 const Header = () => (
   <HeaderContainer>
     <FlexHeader>
-      <Nav stackOnMobile>
+      <Nav>
         {navLinks.map(({ link, title, iconType }) => (
           <StyledNavLink key={title} exact activeClassName="active" to={link}>
             <StyledIcon size={20} type={iconType} fill={theme.primary} />

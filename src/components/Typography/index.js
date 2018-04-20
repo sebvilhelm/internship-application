@@ -41,6 +41,10 @@ export const H1 = styled.h1`
     font-size: 2.8rem;
     color: ${props => (props.theme === 'light' ? theme.white : theme.black)};
   }
+
+  @media (max-width: 40rem) {
+    font-size: 2rem;
+  }
 `;
 
 export const SectionTitle = H1.withComponent('h2');
@@ -112,6 +116,11 @@ export const TextIntro = styled.p`
   a {
     font-weight: 400;
     color: ${theme.primary};
+  }
+
+  @media (max-width: 40rem) {
+    font-size: 1.1rem;
+    font-weight: 400;
   }
 `;
 
