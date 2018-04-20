@@ -39,8 +39,9 @@ const TagList = styled.ul`
 `;
 
 const TagItem = styled.li`
-  ${props => props.active && `border-bottom: 2px solid ${theme.primary}`};
-  margin: 0.5rem 1rem 0.5rem 0;
+  border-bottom: 2px solid transparent;
+  ${props => props.active && `border-color: ${theme.primary}`};
+  margin: 0.5rem 1rem 0.2rem 0;
 `;
 
 class PreviousWork extends React.Component {
@@ -60,6 +61,7 @@ class PreviousWork extends React.Component {
       { filter: 'javascript', name: 'JavaScript' },
       { filter: 'nodejs', name: 'Node.js' },
       { filter: 'react', name: 'React' },
+      { filter: 'design', name: 'Design' },
     ];
     return (
       <section>
