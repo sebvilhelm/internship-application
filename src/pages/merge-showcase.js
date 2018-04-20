@@ -18,7 +18,7 @@ const ScrollContainer = styled.div`
   align-items: flex-end;
   overflow: scroll;
   position: relative;
-  mask-image: linear-gradient(90deg, black 80%, transparent);
+  mask-image: linear-gradient(to right, black 90%, black 50px, transparent);
   @media (max-width: ${imgBreakpoint}) {
     mask-image: none;
     overflow: initial;
