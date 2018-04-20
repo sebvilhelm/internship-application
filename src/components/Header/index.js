@@ -29,7 +29,9 @@ const flexColumn = css`
 
 const Nav = styled.nav`
   display: flex;
-  ${props => props.stackOnMobile && flexColumn};
+  @media (max-width: 40rem) {
+    ${props => props.stackOnMobile && flexColumn};
+  }
 `;
 
 const StyledIcon = styled(Icon)`
