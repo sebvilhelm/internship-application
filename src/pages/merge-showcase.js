@@ -53,6 +53,7 @@ const MergeShowcase = ({ data }) => {
   const { desktopImages, mobileImages } = data;
   return (
     <section>
+      {/* TODO: HELMET */}
       <Title style={{ color: theme.primary, textAlign: 'center' }}>Merge CPH</Title>
       <Container>
         <TextIntro>

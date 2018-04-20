@@ -3,6 +3,7 @@ import { Title, SubTitle } from '../components/Typography';
 
 const NotFoundPage = () => (
   <div>
+    {/* TODO: HELMET */}
     <Title>NOT FOUND</Title>
     <SubTitle>
       Nothing to see here{' '}

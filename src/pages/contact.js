@@ -27,6 +27,7 @@ const CTA = styled(OutboundLink)`
 
 const ContactPage = () => (
   <section>
+    {/* TODO: HELMET */}
     <Title center>Contact Me</Title>
     <TextContainer>
       <TextIntro center>Intrigued? I think talking is the best way to asses anything, so let's talk!</TextIntro>
