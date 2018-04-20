@@ -11,6 +11,10 @@ const Container = styled.article`
   padding: 1rem 2rem 4rem;
 `;
 
+const StyledImg = styled(Img)`
+  margin-bottom: 0.5rem;
+`;
+
 const MergeShowcase = ({ data }) => {
   const { allFile: { edges } } = data;
   return (
@@ -21,7 +25,7 @@ const MergeShowcase = ({ data }) => {
           As an exam project, I designed a platform for conferences called Merge CPH. The mockups below were made in
           Sketch.
         </TextIntro>
-        {edges.map(({ node: { name, childImageSharp: { sizes } } }) => <Img key={name} sizes={sizes} />)}
+        {edges.map(({ node: { name, childImageSharp: { sizes } } }) => <StyledImg key={name} sizes={sizes} />)}
       </Container>
     </section>
   );
@@ -30,7 +34,7 @@ const MergeShowcase = ({ data }) => {
 // eslint-disable-next-line
 export const query = graphql`
   query MergeGalleryQuery {
-    allFile(filter: { relativeDirectory: { eq: "merge" } }) {
+    allFile(filter: { relativeDirectory: { eq: "merge" } }, sort: { fields: [name] }) {
       edges {
         node {
           name
