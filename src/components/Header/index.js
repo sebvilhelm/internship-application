@@ -92,6 +92,7 @@ const StyledLink = styled(OutboundLink)`
 const navLinks = [
   { title: 'Home', link: '/', iconType: 'home' },
   { title: 'Previous Work', link: '/previous-work', iconType: 'rocket' },
+  { title: 'Contact Me', link: '/contact', iconType: 'heart' },
 ];
 
 const socialLinks = [
