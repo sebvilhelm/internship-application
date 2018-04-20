@@ -16,15 +16,20 @@ const FlexHeader = styled.div`
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-
   @media (max-width: 40rem) {
     flex-direction: column;
     align-items: center;
   }
 `;
 
+const flexColumn = css`
+  flex-direction: column;
+  align-items: center;
+`;
+
 const Nav = styled.nav`
   display: flex;
+  ${props => props.stackOnMobile && flexColumn};
 `;
 
 const StyledIcon = styled(Icon)`
@@ -36,7 +41,6 @@ const linkCss = css`
   display: flex;
   align-items: center;
   padding: 1rem 1rem;
-  padding-left: 0.5rem;
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -55,14 +59,28 @@ const linkCss = css`
     position: absolute;
     bottom: 0;
     left: 0;
-    height: 3px;
+    height: 100%;
     width: 100%;
     border-bottom: 3px solid ${theme.primary};
+  }
+  @media (max-width: 40rem) {
+    &.active {
+      color: ${theme.primary};
+      &:before {
+        border-bottom: 0;
+      }
+    }
   }
 `;
 
 const StyledNavLink = styled(Link)`
   ${linkCss};
+
+  ${StyledIcon} {
+    @media (max-width: 40rem) {
+      display: none;
+    }
+  }
 `;
 
 const StyledLink = styled(OutboundLink)`
@@ -83,7 +101,7 @@ const socialLinks = [
 const Header = () => (
   <HeaderContainer>
     <FlexHeader>
-      <Nav>
+      <Nav stackOnMobile>
         {navLinks.map(({ link, title, iconType }) => (
           <StyledNavLink key={title} exact activeClassName="active" to={link}>
             <StyledIcon size={20} type={iconType} fill={theme.primary} />

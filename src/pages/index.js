@@ -24,25 +24,27 @@ const TextContainer = styled.article`
   padding: 1rem 2rem 4rem;
   margin: -3rem auto 0;
   box-shadow: 0 2px 10px hsla(13, 15%, 85%, 0.1), 0 10px 20px 5px hsla(13, 2%, 65%, 0.05);
+
+  @media (max-width: 43rem) {
+    margin-top: 0;
+  }
 `;
 
 const TitleContainer = styled.div`
-  position: absolute;
+  /* position: absolute; */
   width: 100%;
   z-index: 1;
 `;
 
 const IndexPage = ({ data }) => (
   <section>
+    <TitleContainer>
+      <Title style={{ textAlign: 'center' }}>
+        My name is <strong>Sebastian</strong>
+      </Title>
+      <SubTitle style={{ textAlign: 'center' }}>I’m looking for a web development internship for the fall</SubTitle>
+    </TitleContainer>
     <PortraitWrapper>
-      <TitleContainer>
-        <Title theme="light" style={{ textAlign: 'center' }}>
-          My name is <strong>Sebastian</strong>
-        </Title>
-        <SubTitle theme="light" style={{ textAlign: 'center' }}>
-          I’m looking for a web development internship for the fall
-        </SubTitle>
-      </TitleContainer>
       <PortraitContainer>
         <Img sizes={data.file.childImageSharp.sizes} />
       </PortraitContainer>

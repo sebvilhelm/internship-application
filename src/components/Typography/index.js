@@ -2,25 +2,32 @@ import styled from 'styled-components';
 import theme from '../../theme';
 
 export const Title = styled.h1`
-  color: ${props => (props.theme === 'light' ? theme.offWhite : theme.darkGrey)};
+  color: ${props => (props.theme === 'light' ? theme.offWhite : theme.primary)};
   font-weight: 400;
   font-size: 3rem;
   margin: 1rem 0;
   strong {
     font-style: normal;
     font-weight: 600;
-    font-size: 3.5rem;
-    color: ${props => (props.theme === 'light' ? theme.white : theme.black)};
+    font-size: 1.3em;
+    color: ${theme.lightPrimary};
+  }
+  @media (max-width: 40rem) {
+    font-size: 2rem;
   }
 `;
 
-export const SubTitle = styled.h2`
-  color: ${props => (props.theme === 'light' ? theme.offWhite : theme.darkGrey)};
+export const SubTitle = styled.p`
+  color: ${theme.darkPrimary};
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 1rem;
   margin: 1rem 0 2rem;
+
+  @media (max-width: 40rem) {
+    font-size: 0.8rem;
+  }
 `;
 
 export const H1 = styled.h1`
