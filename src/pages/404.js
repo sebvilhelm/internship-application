@@ -1,9 +1,15 @@
 import React from 'react'; // eslint-disable-line import/no-extraneous-dependencies
+import { Title, SubTitle } from '../components/Typography';
 
 const NotFoundPage = () => (
   <div>
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <Title>NOT FOUND</Title>
+    <SubTitle>
+      Nothing to see here{' '}
+      <span role="img" aria-label="Sad face">
+        😢
+      </span>
+    </SubTitle>
   </div>
 );
 

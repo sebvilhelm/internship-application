@@ -1,11 +1,15 @@
 import styled from 'styled-components';
 import theme from '../../theme';
 
+const centerText = props => props.center && 'text-align: center';
+
 export const Title = styled.h1`
   color: ${props => (props.theme === 'light' ? theme.offWhite : theme.primary)};
   font-weight: 400;
   font-size: 3rem;
   margin: 1rem 0;
+  ${centerText};
+
   strong {
     font-style: normal;
     font-weight: 600;
@@ -24,6 +28,7 @@ export const SubTitle = styled.p`
   letter-spacing: 0.1em;
   font-size: 1rem;
   margin: 1rem 0 2rem;
+  ${centerText};
 
   @media (max-width: 40rem) {
     font-size: 0.8rem;
@@ -35,6 +40,7 @@ export const H1 = styled.h1`
   font-weight: 400;
   font-size: 2.5rem;
   margin: 1.2rem 0;
+  ${centerText};
   strong {
     font-style: normal;
     font-weight: 900;
@@ -54,6 +60,7 @@ export const H2 = styled.h2`
   font-weight: 400;
   font-size: 2rem;
   margin: 1rem 0;
+  ${centerText};
 `;
 
 export const H3 = styled.h3`
@@ -61,12 +68,14 @@ export const H3 = styled.h3`
   font-weight: 400;
   font-size: 1.7rem;
   margin: 0.3rem 0 1rem;
+  ${centerText};
 `;
 export const H4 = styled.h4`
   color: ${props => (props.color ? props.color : theme.darkGrey)};
   font-weight: 400;
   font-size: ${props => (props.small ? '1rem' : '1.3rem')};
   margin: 0.3rem 0 1rem;
+  ${centerText};
   li > & {
     margin: 0;
   }
@@ -95,9 +104,10 @@ export const Psst = styled.span`
 export const Text = styled.p`
   color: ${theme.darkGrey};
   margin: 0.5rem 0;
-  max-width: 45rem;
+  ${props => !props.fullWidth && `max-width: 45rem;`};
   font-weight: 300;
   line-height: 1.7;
+  ${centerText};
   strong {
     font-weight: 500;
   }
@@ -113,6 +123,7 @@ export const TextIntro = styled.p`
   margin: 1rem 0;
   font-weight: 300;
   font-style: italic;
+  ${centerText};
   a {
     font-weight: 400;
     color: ${theme.primary};

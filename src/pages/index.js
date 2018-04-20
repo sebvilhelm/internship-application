@@ -30,20 +30,14 @@ const TextContainer = styled.article`
   }
 `;
 
-const TitleContainer = styled.div`
-  /* position: absolute; */
-  width: 100%;
-  z-index: 1;
-`;
-
 const IndexPage = ({ data }) => (
   <section>
-    <TitleContainer>
-      <Title style={{ textAlign: 'center' }}>
+    <div>
+      <Title center>
         My name is <strong>Sebastian</strong>
       </Title>
       <SubTitle style={{ textAlign: 'center' }}>I’m looking for a web development internship for the fall</SubTitle>
-    </TitleContainer>
+    </div>
     <PortraitWrapper>
       <PortraitContainer>
         <Img sizes={data.file.childImageSharp.sizes} />

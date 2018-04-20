@@ -21,6 +21,7 @@ const Card = styled.li`
   background: white;
   padding: 1rem 2rem 2rem;
   list-style: none;
+  box-shadow: 0 2px 10px hsla(13, 15%, 85%, 0.1), 0 10px 20px 5px hsla(13, 2%, 65%, 0.05);
   ${props => props.showBorder && `border-left: 3px solid transparent`};
   border-color: ${props =>
     props.type === 'wordpress'

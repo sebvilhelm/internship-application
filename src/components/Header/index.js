@@ -63,7 +63,7 @@ const linkCss = css`
     left: 0;
     height: 100%;
     width: 100%;
-    border-bottom: 3px solid ${theme.primary};
+    border-bottom: 3px solid ${theme.darkPrimary};
   }
   @media (max-width: 40rem) {
     &.active {
@@ -107,7 +107,7 @@ const Header = () => (
       <Nav>
         {navLinks.map(({ link, title, iconType }) => (
           <StyledNavLink key={title} exact activeClassName="active" to={link}>
-            <StyledIcon size={20} type={iconType} fill={theme.primary} />
+            <StyledIcon size={18} type={iconType} fill={theme.primary} />
             {title}
           </StyledNavLink>
         ))}
