@@ -7,6 +7,7 @@ module.exports = {
     'gatsby-plugin-styled-components',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    'gatsby-plugin-nprogress',
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -19,6 +20,7 @@ module.exports = {
         respectDNT: true,
       },
     },
+    'gatsby-plugin-sitemap',
     {
       resolve: `gatsby-source-filesystem`,
       options: {

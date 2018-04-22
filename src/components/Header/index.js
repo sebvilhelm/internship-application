@@ -53,7 +53,7 @@ const linkCss = css`
   }
   &:hover,
   &:focus {
-    color: ${theme.primary};
+    color: hsl(190, 66%, 62%);
   }
 
   &.active:before {
@@ -67,7 +67,7 @@ const linkCss = css`
   }
   @media (max-width: 40rem) {
     &.active {
-      color: ${theme.primary};
+      color: hsl(190, 66%, 62%);
       &:before {
         border-bottom: 0;
       }
@@ -107,15 +107,15 @@ const Header = () => (
       <Nav>
         {navLinks.map(({ link, title, iconType }) => (
           <StyledNavLink key={title} exact activeClassName="active" to={link}>
-            <StyledIcon size={18} type={iconType} fill={theme.primary} />
+            <StyledIcon size={18} type={iconType} fill="hsl(190, 66%, 62%)" />
             {title}
           </StyledNavLink>
         ))}
       </Nav>
       <Nav>
         {socialLinks.map(({ link, title, iconType }) => (
-          <StyledLink aria-label={title} key={title} target="_blank" title={title} href={link}>
-            <StyledIcon size={20} type={iconType} fill={theme.primary} />
+          <StyledLink rel="noopener" aria-label={title} key={title} target="_blank" title={title} href={link}>
+            <StyledIcon size={20} type={iconType} fill="hsl(190, 66%, 62%)" />
           </StyledLink>
         ))}
       </Nav>

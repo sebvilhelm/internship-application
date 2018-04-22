@@ -9,7 +9,7 @@ import './index.css';
 
 const Wrapper = styled.div`
   ${theme.bgPattern};
-  border-top: 5px solid ${theme.primary};
+  border-top: 5px solid hsl(190, 66%, 62%);
   min-height: 100vh;
   display: grid;
   grid-template-rows: min-content minmax(60vh, min-content) 1fr;
@@ -38,7 +38,7 @@ class TemplateWrapper extends React.Component {
         showOutline={this.state.showOutline}
       >
         <Helmet
-          title="Sebastian is looking for an internship"
+          title=""
           meta={[
             {
               name: 'description',
@@ -47,7 +47,10 @@ class TemplateWrapper extends React.Component {
             },
             { name: 'keywords', content: 'web development, education, internship' },
           ]}
-        />
+        >
+          <html lang="en" />
+          <title>Sebastian is looking for an internship</title>
+        </Helmet>
         <Header />
         <main>{this.props.children()}</main>
         <Footer />

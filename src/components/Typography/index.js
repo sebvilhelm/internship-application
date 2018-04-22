@@ -4,7 +4,7 @@ import theme from '../../theme';
 const centerText = props => props.center && 'text-align: center';
 
 export const Title = styled.h1`
-  color: ${props => (props.theme === 'light' ? theme.offWhite : theme.primary)};
+  color: hsl(193, 90%, 17%);
   font-weight: 400;
   font-size: 3rem;
   margin: 1rem 0;
@@ -14,7 +14,7 @@ export const Title = styled.h1`
     font-style: normal;
     font-weight: 600;
     font-size: 1.3em;
-    color: ${theme.lightPrimary};
+    color: hsl(193, 100%, 20%);
   }
   @media (max-width: 40rem) {
     font-size: 2rem;
@@ -22,7 +22,7 @@ export const Title = styled.h1`
 `;
 
 export const SubTitle = styled.p`
-  color: ${theme.darkPrimary};
+  color: hsl(193, 100%, 17%);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -79,6 +79,10 @@ export const H4 = styled.h4`
   li > & {
     margin: 0;
   }
+
+  @media (max-width: 500px) {
+    font-size: 1.3rem;
+  }
 `;
 
 export const Description = styled.p`
@@ -87,7 +91,7 @@ export const Description = styled.p`
   margin: 0 0 1rem;
   a {
     font-weight: 400;
-    color: ${theme.primary};
+    color: hsl(193, 55%, 37%);
   }
   strong {
     font-weight: 600;
@@ -113,7 +117,7 @@ export const Text = styled.p`
   }
   a {
     font-weight: 400;
-    color: ${theme.primary};
+    color: hsl(193, 55%, 37%);
   }
 `;
 
@@ -126,7 +130,7 @@ export const TextIntro = styled.p`
   ${centerText};
   a {
     font-weight: 400;
-    color: ${theme.primary};
+    color: hsl(193, 55%, 37%);
   }
 
   @media (max-width: 40rem) {
