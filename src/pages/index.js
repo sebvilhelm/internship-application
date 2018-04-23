@@ -76,7 +76,7 @@ const IndexPage = ({ data }) => (
 // eslint-disable-next-line
 export const query = graphql`
   query HeaderImageQuery {
-    file(relativePath: { eq: "portrait_me.jpg" }) {
+    file(relativePath: { eq: "portrait2.jpg" }) {
       childImageSharp {
         sizes(maxWidth: 1220, maxHeight: 600) {
           ...GatsbyImageSharpSizes
