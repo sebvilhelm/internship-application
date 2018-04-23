@@ -52,4 +52,4 @@ export const tech = [
   },
 ];
 
-export const otherTech = ['Redux', 'Node.js', 'Express.js', 'Apollo GraphQL', 'Angular 5'];
+export const otherTech = ['TypeScript', 'Redux', 'Node.js', 'Express.js', 'Apollo GraphQL', 'Angular 5'];
