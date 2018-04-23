@@ -46,7 +46,7 @@ const linkCss = css`
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  font-size: 14px;
+  font-size: 0.8rem;
   color: ${theme.offWhite};
   &:active {
     color: white;
