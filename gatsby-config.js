@@ -19,7 +19,7 @@ module.exports = {
         respectDNT: true,
       },
     },
-    // 'gatsby-plugin-sitemap', //disable until url is resolved
+    'gatsby-plugin-sitemap',
     {
       resolve: `gatsby-source-filesystem`,
       options: {
