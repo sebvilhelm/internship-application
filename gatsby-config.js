@@ -20,7 +20,7 @@ module.exports = {
         respectDNT: true,
       },
     },
-    'gatsby-plugin-sitemap',
+    //'gatsby-plugin-sitemap', // TODO: this is broken
     {
       resolve: `gatsby-source-filesystem`,
       options: {
