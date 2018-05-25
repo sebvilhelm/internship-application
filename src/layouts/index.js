@@ -9,7 +9,7 @@ import './index.css';
 
 const Wrapper = styled.div`
   ${theme.bgPattern};
-  border-top: 5px solid hsl(190, 66%, 62%);
+  /* border-top: 5px solid hsl(190, 66%, 62%); */
   min-height: 100vh;
   display: grid;
   grid-template-rows: min-content minmax(60vh, min-content) 1fr;
