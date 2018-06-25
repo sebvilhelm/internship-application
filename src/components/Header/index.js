@@ -1,6 +1,6 @@
 import React from 'react'; // eslint-disable-line import/no-extraneous-dependencies
 import styled, { css } from 'styled-components';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import theme from '../../theme';
 import Icon from '../../components/Icon';

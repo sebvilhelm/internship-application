@@ -1,13 +1,13 @@
 module.exports = {
   siteMetadata: {
     title: 'Sebastian is looking for an internship',
+    siteUrl: 'https://www.sebastianislookingforaninternship.com/',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
-    'gatsby-plugin-react-next',
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

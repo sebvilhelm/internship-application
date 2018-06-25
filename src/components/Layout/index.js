@@ -2,9 +2,9 @@ import React from 'react'; // eslint-disable-line import/no-extraneous-dependenc
 import PropTypes from 'prop-types'; // eslint-disable-line import/no-extraneous-dependencies
 import Helmet from 'react-helmet';
 import styled from 'styled-components';
-import theme from '../theme';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import theme from '../../theme';
+import Header from '../Header';
+import Footer from '../Footer';
 import './index.css';
 
 const Wrapper = styled.div`
@@ -38,7 +38,6 @@ class TemplateWrapper extends React.Component {
         showOutline={this.state.showOutline}
       >
         <Helmet
-          title=""
           meta={[
             {
               name: 'description',
@@ -52,7 +51,7 @@ class TemplateWrapper extends React.Component {
           <title>Sebastian is looking for an internship</title>
         </Helmet>
         <Header />
-        <main>{this.props.children()}</main>
+        <main>{this.props.children}</main>
         <Footer />
       </Wrapper>
     );

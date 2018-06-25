@@ -1,8 +1,10 @@
 import React from 'react'; // eslint-disable-line import/no-extraneous-dependencies
+import { graphql } from 'gatsby';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
 import { Title, TextIntro } from '../components/Typography';
 import theme from '../theme';
+import Layout from '../components/Layout';
 
 const Container = styled.article`
   background-color: ${theme.white};
@@ -52,35 +54,46 @@ const MobileImgContainer = styled.div`
 const MergeShowcase = ({ data }) => {
   const { desktopImages, mobileImages } = data;
   return (
-    <section>
-      {/* TODO: HELMET */}
-      <Title style={{ color: theme.primary, textAlign: 'center' }}>Merge CPH</Title>
-      <Container>
-        <TextIntro>
-          As an exam project, I designed a platform for conferences called Merge CPH. The mockups below were made in
-          Sketch.
-        </TextIntro>
-        <ScrollContainer>
-          {desktopImages.edges.map(({ node: { name, childImageSharp: { resolutions } } }) => (
-            <StyledImgContainer key={`${name}-desktop`}>
-              <Img resolutions={resolutions} />
-            </StyledImgContainer>
-          ))}
-          {mobileImages.edges.map(({ node: { name, childImageSharp: { sizes } } }) => (
-            <MobileImgContainer key={`${name}-mobile`}>
-              <Img sizes={sizes} />
-            </MobileImgContainer>
-          ))}
-        </ScrollContainer>
-      </Container>
-    </section>
+    <Layout>
+      <section>
+        {/* TODO: HELMET */}
+        <Title style={{ color: theme.primary, textAlign: 'center' }}>
+          Merge CPH
+        </Title>
+        <Container>
+          <TextIntro>
+            As an exam project, I designed a platform for conferences called
+            Merge CPH. The mockups below were made in Sketch.
+          </TextIntro>
+          <ScrollContainer>
+            {desktopImages.edges.map(
+              ({ node: { name, childImageSharp: { resolutions } } }) => (
+                <StyledImgContainer key={`${name}-desktop`}>
+                  <Img resolutions={resolutions} />
+                </StyledImgContainer>
+              )
+            )}
+            {mobileImages.edges.map(
+              ({ node: { name, childImageSharp: { sizes } } }) => (
+                <MobileImgContainer key={`${name}-mobile`}>
+                  <Img sizes={sizes} />
+                </MobileImgContainer>
+              )
+            )}
+          </ScrollContainer>
+        </Container>
+      </section>
+    </Layout>
   );
 };
 
 // eslint-disable-next-line
 export const query = graphql`
   query MergeGalleryQuery {
-    desktopImages: allFile(filter: { relativeDirectory: { eq: "merge" } }, sort: { fields: [name] }) {
+    desktopImages: allFile(
+      filter: { relativeDirectory: { eq: "merge" } }
+      sort: { fields: [name] }
+    ) {
       edges {
         node {
           name
@@ -93,7 +106,10 @@ export const query = graphql`
       }
     }
 
-    mobileImages: allFile(filter: { relativeDirectory: { eq: "merge" } }, sort: { fields: [name] }) {
+    mobileImages: allFile(
+      filter: { relativeDirectory: { eq: "merge" } }
+      sort: { fields: [name] }
+    ) {
       edges {
         node {
           name

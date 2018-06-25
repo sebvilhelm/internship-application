@@ -5,6 +5,8 @@ import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import { Title, TextIntro, Text, Psst } from '../components/Typography';
 import theme from '../theme';
 
+import Layout from '../components/Layout';
+
 const TextContainer = styled.div`
   max-width: ${theme.maxScreenWidth};
   margin: 0 auto;
@@ -26,8 +28,12 @@ const CTA = styled(OutboundLink)`
 `;
 
 const ContactPage = () => (
+<Layout>
   <section>
     {/* TODO: HELMET */}
+    <Helmet>
+      <meta name="description" content="Contact me, please" />
+    </Helmet>
     <Title center>Contact Me</Title>
     <TextContainer>
       <TextIntro center>Intrigued? I think talking is the best way to asses anything, so let's talk!</TextIntro>
@@ -38,6 +44,7 @@ const ContactPage = () => (
       </Text>
     </TextContainer>
   </section>
+</Layout>
 );
 
 export default ContactPage;
