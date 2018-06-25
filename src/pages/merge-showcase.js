@@ -87,7 +87,6 @@ const MergeShowcase = ({ data }) => {
   );
 };
 
-// eslint-disable-next-line
 export const query = graphql`
   query MergeGalleryQuery {
     desktopImages: allFile(
